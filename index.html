@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UYELLITOUT Animation</title>
+  <style>
+    .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+
+    .dash {
+      animation: dashArray 2s ease-in-out infinite, dashOffset 2s linear infinite;
+      stroke: #007acc;
+      stroke-width: 4;
+      fill: none;
+    }
+
+    .spin {
+      animation: spinDashArray 2s ease-in-out infinite, spin 8s ease-in-out infinite, dashOffset 2s linear infinite;
+      stroke: #007acc;
+      stroke-width: 4;
+      fill: none;
+      transform-origin: center;
+    }
+
+    @keyframes dashArray {
+      0% {
+        stroke-dasharray: 0 1 359 0;
+      }
+      50% {
+        stroke-dasharray: 0 359 1 0;
+      }
+      100% {
+        stroke-dasharray: 359 1 0 0;
+      }
+    }
+
+    @keyframes spinDashArray {
+      0% {
+        stroke-dasharray: 270 90;
+      }
+      50% {
+        stroke-dasharray: 0 360;
+      }
+      100% {
+        stroke-dasharray: 270 90;
+      }
+    }
+
+    @keyframes dashOffset {
+      0% {
+        stroke-dashoffset: 365;
+      }
+      100% {
+        stroke-dashoffset: 5;
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        rotate: 0deg;
+      }
+      12.5%, 25% {
+        rotate: 270deg;
+      }
+      37.5%, 50% {
+        rotate: 540deg;
+      }
+      62.5%, 75% {
+        rotate: 810deg;
+      }
+      87.5%, 100% {
+        rotate: 1080deg;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader">
+    <svg width="800" height="150" viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg">
+      <!-- Letter U -->
+      <path class="dash" d="M50,10 Q70,140 90,10" />
+
+      <!-- Letter Y -->
+      <path class="dash" d="M120,10 L140,60 L160,10" />
+
+      <!-- Letter E -->
+      <path class="dash" d="M200,10 L200,140 L250,140 L200,75 L250,75 L200,10" />
+
+      <!-- Letter L -->
+      <path class="dash" d="M280,10 L280,140 L330,140" />
+
+      <!-- Second L -->
+      <path class="dash" d="M360,10 L360,140 L410,140" />
+
+      <!-- Letter I -->
+      <path class="dash" d="M440,10 L440,140" />
+
+      <!-- Letter T -->
+      <path class="dash" d="M470,10 L520,10 M495,10 L495,140" />
+
+      <!-- Letter O -->
+      <circle class="spin" cx="580" cy="75" r="50" />
+
+      <!-- Letter U -->
+      <path class="dash" d="M650,10 Q670,140 690,10" />
+
+      <!-- Letter T -->
+      <path class="dash" d="M720,10 L770,10 M745,10 L745,140" />
+    </svg>
+  </div>
+</body>
+</html>
