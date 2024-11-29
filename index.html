@@ -1,100 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UYELLITOUT Animation</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f4f4f4;
-    }
+<div class="loader">
+  <svg height="0" width="0" viewBox="0 0 64 64" class="absolute">
+    <!-- Gradient definitions (unchanged) -->
+    <defs class="s-xJBuHA073rTt" xmlns="http://www.w3.org/2000/svg">
+      <linearGradient class="s-xJBuHA073rTt" gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="b">
+        <stop class="s-xJBuHA073rTt" stop-color="#973BED"></stop>
+        <stop class="s-xJBuHA073rTt" stop-color="#007CFF" offset="1"></stop>
+      </linearGradient>
+      <linearGradient class="s-xJBuHA073rTt" gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0" id="c">
+        <stop class="s-xJBuHA073rTt" stop-color="#FFC800"></stop>
+        <stop class="s-xJBuHA073rTt" stop-color="#F0F" offset="1"></stop>
+        <animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0;.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="8s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform"></animateTransform>
+      </linearGradient>
+    </defs>
+  </svg>
 
-    .loader svg {
-      width: 90%;
-      max-width: 1000px;
-      height: auto;
-    }
+  <!-- Add letters here with different animations -->
+  <svg class="inline-block">
+    <path class="dash" stroke="url(#b)" d="M 54.722656,3.9726563 A 2.0002,2.0002 0 0 0 54.941406,4 h 5.007813 C ..." id="U" pathLength="360"></path>
+  </svg>
 
-    /* Path styles */
-    .dash {
-      stroke-width: 6;
-      fill: none;
-      stroke-linecap: round;
-      animation: dashArray 4s ease-in-out infinite, dashOffset 4s linear infinite;
-    }
+  <svg class="inline-block">
+    <path class="spin" stroke="url(#c)" d="M 32 32 m 0 -27 a 27 27 0 1 1 0 54 a 27 27 0 1 1 0 -54" id="Y" pathLength="360"></path>
+  </svg>
 
-    /* Color for each letter */
-    .letter-U { stroke: #F28D35; }
-    .letter-Y { stroke: #9C27B0; }
-    .letter-E { stroke: #FF5722; }
-    .letter-L { stroke: #4CAF50; }
-    .letter-I { stroke: #2196F3; }
-    .letter-T { stroke: #FFEB3B; }
-    .letter-O { stroke: #673AB7; }
-    .letter-T2 { stroke: #00BCD4; }
+  <svg class="inline-block">
+    <path class="dash" stroke="url(#d)" d="M 4,4 h 4.6230469 v 25.919922..." id="E" pathLength="360"></path>
+  </svg>
 
-    /* Keyframe animations for drawing paths */
-    @keyframes dashArray {
-      0% {
-        stroke-dasharray: 0 1 359 0;
-      }
-      50% {
-        stroke-dasharray: 0 359 1 0;
-      }
-      100% {
-        stroke-dasharray: 359 1 0 0;
-      }
-    }
+  <svg class="inline-block">
+    <path class="spin" stroke="url(#b)" d="M 32 32 m 0 -27 a 27 27 0 1 1 0 54..." id="L" pathLength="360"></path>
+  </svg>
 
-    @keyframes dashOffset {
-      0% {
-        stroke-dashoffset: 365;
-      }
-      100% {
-        stroke-dashoffset: 5;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="loader">
-    <svg width="800" height="150" viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg">
-      <!-- Letter U -->
-      <path class="dash letter-U" d="M50,10 Q70,140 90,10" />
+  <!-- Repeat the process for the rest of the letters -->
+  <svg class="inline-block">
+    <path class="dash" stroke="url(#d)" d="M ..." id="L2" pathLength="360"></path>
+  </svg>
 
-      <!-- Letter Y -->
-      <path class="dash letter-Y" d="M120,10 L140,60 L160,10" />
+  <svg class="inline-block">
+    <path class="spin" stroke="url(#b)" d="M ..." id="I" pathLength="360"></path>
+  </svg>
 
-      <!-- Letter E -->
-      <path class="dash letter-E" d="M200,10 L200,140 L250,140 L200,75 L250,75 L200,10" />
+  <!-- Continue adding the rest of the letters for "YELLITOUT" -->
+  <svg class="inline-block">
+    <path class="dash" stroke="url(#c)" d="M ..." id="T" pathLength="360"></path>
+  </svg>
 
-      <!-- Letter L -->
-      <path class="dash letter-L" d="M280,10 L280,140 L330,140" />
+  <svg class="inline-block">
+    <path class="spin" stroke="url(#d)" d="M ..." id="O" pathLength="360"></path>
+  </svg>
 
-      <!-- Second L -->
-      <path class="dash letter-L" d="M360,10 L360,140 L410,140" />
+  <svg class="inline-block">
+    <path class="dash" stroke="url(#b)" d="M ..." id="U2" pathLength="360"></path>
+  </svg>
 
-      <!-- Letter I -->
-      <path class="dash letter-I" d="M440,10 L440,140" />
-
-      <!-- Letter T -->
-      <path class="dash letter-T" d="M470,10 L520,10 M495,10 L495,140" />
-
-      <!-- Letter O -->
-      <circle class="dash letter-O" cx="580" cy="75" r="50" />
-
-      <!-- Letter U -->
-      <path class="dash letter-U" d="M650,10 Q670,140 690,10" />
-
-      <!-- Letter T -->
-      <path class="dash letter-T2" d="M720,10 L770,10 M745,10 L745,140" />
-    </svg>
-  </div>
-</body>
-</html>
+  <svg class="inline-block">
+    <path class="spin" stroke="url(#c)" d="M ..." id="T2" pathLength="360"></path>
+  </svg>
+</div>
